@@ -23,7 +23,11 @@
     "source": "build",
     "minifyHtml": {
       "collapseWhitespaces": false,
-      "removeComments" : true
+      "removeComments": true,
+      "puppeteerArgs": [
+        "--no-sandbox",
+        "--disable-setuid-sandbox"
+      ]
     }
   },
   "eslintConfig": {
