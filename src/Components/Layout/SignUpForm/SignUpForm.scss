@@ -1,0 +1,10 @@
+.form-content{
+    outline: solid 1px red;
+    display: flex;
+    height: 100%;
+    padding: 2em;
+    gap: 1em;
+    flex-direction: column;
+    max-width: 500px;
+    width: 100%;
+}

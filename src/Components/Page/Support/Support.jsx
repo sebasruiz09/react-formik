@@ -1,7 +1,14 @@
-import React from 'react'
+import React from "react";
+import { Helmet } from "react-helmet";
 
 export default function Support() {
   return (
-    <div>Support</div>
-  )
+    <>
+      <Helmet>
+        <title>iShop | Support</title>
+        <meta charSet="utf-8"></meta>
+      </Helmet>
+      <div>Support</div>
+    </>
+  );
 }
