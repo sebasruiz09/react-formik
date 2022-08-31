@@ -5,20 +5,17 @@ import axios from "axios";
 
 export const SignUpForm = () => {
   const sendUserData = (values) => {
-    let data = JSON.stringify({ user: values.name, password: values.password });
-    console.warn(data);
-    // let url = "axios URL";
-
-    // axios.post(url, JSON.stringify({
-    //     user : values.name,
-    //     password : values.password
-    //   }))
-    //   .then((res) => {
-    //     console.log(res);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
+    let URL = "http://localhost:3002/login";
+    axios.post(URL , {
+      email  : values.user,
+      password : values.password
+    }).then(
+      response => {
+        console.warn(response.message);    
+      }
+    ).catch(err => {
+      console.warn(err.message);
+    })
   };
 
   return (
@@ -30,11 +27,7 @@ export const SignUpForm = () => {
       validate={(values) => {
         const errors = {};
         //username validate
-        if (!values.name) {
-          errors.name = "required";
-        } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(values.name)) {
-          errors.name = "can only contain letters and spaces";
-        }
+        
         //errors logic
         return errors;
       }}
